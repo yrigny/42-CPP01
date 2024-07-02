@@ -17,14 +17,17 @@ int main(int argc, char **argv) {
         std::cerr << "Usage: ./SedPro <filename> <s1> <s2>" << std::endl;
         return 0;
     }
+
     std::ifstream   file(argv[1], std::ios::in);
     if (!file) {
         std::cerr << "Error: Failed to open file." << std::endl;
         return 1;
     }
+
     file.seekg(0, file.end);
     int length = file.tellg();
     file.seekg(0, file.beg);
+
     std::string buffer(length, '\0');
     file.read(&buffer[0], length);
     if (!file) {
@@ -33,5 +36,6 @@ int main(int argc, char **argv) {
         return 1;
     }
     file.close();
+    
     return SedPro(buffer, argv[1], argv[2], argv[3]);
 }

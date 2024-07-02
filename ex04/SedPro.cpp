@@ -17,12 +17,14 @@ bool    SedPro(std::string& buffer, std::string filename, std::string s1, std::s
         std::cerr << "Error: <s1> must not be empty string." << std::endl;
         return false;
     }
+
     std::string     outfile = filename + ".replace";
     std::ofstream   file(outfile.c_str(), std::ofstream::out);
     if (!file) {
         std::cerr << "Error: Failed to create the replace file." << std::endl;
         return false;
     }
+    
     size_t  start = 0;
     size_t  pos = buffer.find(s1, start);
     while (pos != std::string::npos) {
