@@ -12,17 +12,17 @@
 
 #include "SedPro.hpp"
 
-bool    SedPro(std::string& buffer, std::string filename, std::string s1, std::string s2) {
+int	SedPro(std::string& buffer, std::string filename, std::string s1, std::string s2) {
     if (s1 == "") {
         std::cerr << "Error: <s1> must not be empty string." << std::endl;
-        return false;
+        return 1;
     }
 
     std::string     outfile = filename + ".replace";
     std::ofstream   file(outfile.c_str(), std::ofstream::out);
     if (!file) {
         std::cerr << "Error: Failed to create the replace file." << std::endl;
-        return false;
+        return 1;
     }
     
     size_t  start = 0;
@@ -38,5 +38,5 @@ bool    SedPro(std::string& buffer, std::string filename, std::string s1, std::s
     if (start < buffer.size())
         file.write(&buffer[start], buffer.size() - start);
     file.close();
-    return true;
+    return 0;
 }

@@ -16,6 +16,6 @@
 # include <iostream>
 # include <fstream>
 
-bool    SedPro(std::string& buffer, std::string filename, std::string s1, std::string s2);
+int SedPro(std::string& buffer, std::string filename, std::string s1, std::string s2);
 
 #endif
