@@ -13,7 +13,7 @@
 #include "Zombie.hpp"
 
 int main(void) {
-    Zombie  randomChump("Foo");
+    randomChump("Foo");
     Zombie  *bar = newZombie("Bar");
     if (!bar)
         return 1;
