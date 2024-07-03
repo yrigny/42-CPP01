@@ -18,7 +18,7 @@ SRC = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-NAME = Battlefield
+NAME = Battle
 
 all: $(NAME)
 
