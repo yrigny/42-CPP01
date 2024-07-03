@@ -15,6 +15,7 @@
 
 int main()
 {
+	std::cout << "Test 1: Bob vs Jim (Jim initiated with weapon)" << std::endl;
     {
         Weapon club = Weapon("crude spiked club");
         HumanA bob("Bob", club);
@@ -30,5 +31,20 @@ int main()
         club.setType("some other type of club");
         jim.attack();
     }
-return 0;
+    std::cout << std::endl << "Test 2: Bob vs Jim (Jim initiated with no weapon)" << std::endl;
+    {
+        Weapon club = Weapon("crude spiked club");
+        HumanA bob("Bob", club);
+        bob.attack();
+        club.setType("some other type of club");
+        bob.attack();
+    }
+    {
+        Weapon club = Weapon("crude spiked club");
+        HumanB jim("Jim");
+        jim.attack();
+		jim.setWeapon(club);
+        jim.attack();
+    }
+	return 0;
 }
