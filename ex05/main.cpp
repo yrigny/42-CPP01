@@ -13,9 +13,11 @@
 #include "Harl.hpp"
 
 int main(int argc, char **argv) {
-    if (argc == 2) {
-        Harl    obj;
-        obj.complain(argv[1]);
+    if (argc != 2) {
+        std::cout << "Usage: ./Harl DEBUG/INFO/WARNING/ERROR" << std::endl;
+        return 0;
     }
+    Harl    obj;
+    obj.complain(argv[1]);
     return 0;
 }
