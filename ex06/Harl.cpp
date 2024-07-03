@@ -100,4 +100,3 @@ void    Harl::error(void) {
 			break;
 	}
 }
-
